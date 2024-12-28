@@ -45,20 +45,20 @@ Copy the tigerlog.service file\
   sudo systemctl enable tigerlog.service\
   sudo systemctl start tigerlog.service
 
-The script logit can be used to send message to a logfile.
+The script logit can be used to send message to a logfile.\
   logit logName "message"
 
-Also you can use the tigerlog library to also send messsages.
-  int tigerLogSocket();		// Returns a UDP socket.
-  int tigerLogNew(int sock, char *logName);
-  int tigerLogArc(int sock, char *logName);
-  int tigerLogDel(int sock, char *logName);
+Also you can use the tigerlog library to also send messsages.\
+  int tigerLogSocket();		// Returns a UDP socket.\
+  int tigerLogNew(int sock, char *logName);\
+  int tigerLogArc(int sock, char *logName);\
+  int tigerLogDel(int sock, char *logName);\
 The library is found in my utils repo. See testdir directory for an example.
 
 NOTE: Messages can NOT have a '~' character.
 
-Use the tigerlogctl script to create a new log file.
-Use the tigerlogctl script to remove a log file entry from tigerlog program.
-Use the tigerlogctl script to archive a log file. Only two archive files a kept.
+Use the tigerlogctl script to create a new log file.\
+Use the tigerlogctl script to remove a log file entry from tigerlog program.\
+Use the tigerlogctl script to archive a log file. Only two archive files a kept.\
 
 Remember that UDP packets can be lost but it is unlikely since packets never leave the system.
