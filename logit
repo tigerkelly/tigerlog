@@ -1,0 +1,11 @@
+#!/bin/bash
+# Send a log message to the tigerlog program to log.
+
+if [ "$#" != 2 ]; then
+	echo "Usage: logit logName \"Message\""
+	exit 1
+fi
+
+port=$(/home/pi/bin/getport tigerlog udp)
+
+echo -n "LogMsg~$1~$2" > /dev/udp/127.0.0.1/${port}

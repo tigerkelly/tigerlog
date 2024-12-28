@@ -1,0 +1,26 @@
+#!/bin/bash
+# Manage TigerLog system.
+
+if [ "$#" != 2 ]; then
+	echo "Usage: tigerlogctl [create|delete|archive] logName"
+	exit 1
+fi
+
+port=$(/home/pi/bin/getport tigerlog udp)
+
+case $1 in
+	create)
+	echo Create new log file.
+	echo -n "NewLog:$2" > /dev/udp/127.0.0.1/${port}
+	;;
+	delete)
+	echo Delete log file
+	echo -n "DelLog:$2" > /dev/udp/127.0.0.1/${port}
+	;;
+	archive)
+	echo Archive log file
+	echo -n "ArcLog:$2" > /dev/udp/127.0.0.1/${port}
+	;;
+esac
+
+exit 0

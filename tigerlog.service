@@ -1,0 +1,17 @@
+
+[Unit]
+Description=TigerLog service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/home/pi/bin/tigerlog.sh
+WorkingDirectory=/home/pi
+StandardOutput=inherit
+StandardError=inherit
+Restart=on-failure
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
