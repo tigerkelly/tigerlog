@@ -1,23 +1,23 @@
 # tigerlog
 Tigerlog is a local logging system, using UDP packets sent to the listening port of the tigerlog program.
 
-Features:
-    - Can have a many log files as you like.
-    - Can place the logs in a ramdisk to save SD cards.
-    - Can create log files dynamically.
-    - Can delete log files at any time.
+*Features:*
+- Can have a many log files as you like.
+- Can place the logs in a ramdisk to save SD cards.
+- Can create log files dynamically.
+- Can delete log files at any time.
 
 The tigerlog system only listens to the 127.0.0.1 subnet.
 Add at the end of the /etc/services file.
-  sudo echo "tigerlog\t5252/udp" >> /etc/services
+  `sudo echo "tigerlog\t5252/udp" >> /etc/services`
 
-Edit the tigerlog.ini file to your liking.
-The fields have the following meaning.
-  basePath = The directory were log files will be kept.
-  logName = Normally this is 'tigerlog'
-  maxLogs = Max number of log files that can be created and managed.
-  maxRecv = Max number of bytes a log message can be.
-  maxLogSize = Max size of all log files in MB
+Edit the tigerlog.ini file to your liking.\
+The fields have the following meaning.\
+  basePath = The directory were log files will be kept.\
+  logName = Normally this is 'tigerlog'\
+  maxLogs = Max number of log files that can be created and managed.\
+  maxRecv = Max number of bytes a log message can be.\
+  maxLogSize = Max size of all log files in MB\
 
 The basePath can be a ramdisk but logs will be lost if system reboots.
 
