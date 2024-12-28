@@ -17,32 +17,32 @@ The fields have the following meaning.\
   logName = Normally this is 'tigerlog'\
   maxLogs = Max number of log files that can be created and managed.\
   maxRecv = Max number of bytes a log message can be.\
-  maxLogSize = Max size of all log files in MB\
+  maxLogSize = Max size of all log files in MB
 
 The basePath can be a ramdisk but logs will be lost if system reboots.
 
-Create a directory called /usr/local/etc/tigerlog
-Copy the tigerlog.ini file to the /usr/local/etc/tigerlog directory.
-  sudo chmod 0400 /usr/local/etc/tigerlog/tigerlog.ini
+Create a directory called /usr/local/etc/tigerlog\
+Copy the tigerlog.ini file to the /usr/local/etc/tigerlog directory.\
+  sudo chmod 0400 /usr/local/etc/tigerlog/tigerlog.ini\
   sudo chown root:root /usr/local/etc/tigerlog/tigerlog.ini
 
-Log files can be created in 2 ways.
-If you create a file in the basePath directory called logName.log then when the tigerlog
-program runs it will automatically create the log file entry in the tigerlog program.
+Log files can be created in 2 ways.\
+If you create a file in the basePath directory called logName.log then when the tigerlog\
+program runs it will automatically create the log file entry in the tigerlog program.\
   sudo touch /basePath/logName.log
 
-Use the tigerlogctl sctipt to create, delete or archive a log file.
-  tigerlogctl new newLogName
-  tigerlogctl delete LogName
+Use the tigerlogctl sctipt to create, delete or archive a log file.\
+  tigerlogctl new newLogName\
+  tigerlogctl delete LogName\
   tigerlogctl archive LogName
 
-The delete action does not delete the log file.  Only stops tigerlog program from logging any more messages.
+The delete action does not delete the log file.  Only stops tigerlog program from logging any more messages.\
 If the tigerlog program is restarted and the log file exists in the basePath directory then it will be enabled again.
 
-Copy the tigerlog.service file
+Copy the tigerlog.service file\
   sudo cp tigerlog.service /etc/systemd/system/tigerlog.service
 
-  sudo systemctl enable tigerlog.service
+  sudo systemctl enable tigerlog.service\
   sudo systemctl start tigerlog.service
 
 The script logit can be used to send message to a logfile.
