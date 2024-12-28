@@ -8,4 +8,4 @@ fi
 
 port=$(/home/pi/bin/getport tigerlog udp)
 
-echo -n "LogMsg~$1~$2" > /dev/udp/127.0.0.1/${port}
+echo -n "L~$1~$2" > /dev/udp/127.0.0.1/${port}

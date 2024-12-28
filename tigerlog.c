@@ -236,15 +236,15 @@ int main(int argc, char *argv[]) {
 
 			// printf("recvString: %s\n", recvString);
 
-			if (strncmp(recvString, "NewLog:", 7) == 0) {
+			if (strncmp(recvString, "N:", 2) == 0) {
 				createNewLog(recvString);
-			} else if (strncmp(recvString, "DelLog:", 7) == 0) {
+			} else if (strncmp(recvString, "D:", 2) == 0) {
 				// DelLog:logName
 				deleteLog(recvString);
-			} else if (strncmp(recvString, "ArcLog:", 7) == 0) {
+			} else if (strncmp(recvString, "A:", 2) == 0) {
 				// ArcLog:logName
 				archiveLog(recvString);
-			} else if (strncmp(recvString, "LogMsg~", 7) == 0) {
+			} else if (strncmp(recvString, "L~", 2) == 0) {
 				char *p = strrchr(recvString, '\n');
 				if (p != NULL)
 					*p = '\0';
