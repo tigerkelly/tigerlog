@@ -2,13 +2,13 @@
 Tigerlog is a local logging system, using UDP packets sent to the listening port of the tigerlog program.
 
 *Features:*
-- Can have a many log files as you like.
+- Can have as many log files as you like.
 - Can place the logs in a ramdisk to save SD cards.
 - Can create log files dynamically.
 - Can delete log files at any time.
 
 The tigerlog system only listens to the 127.0.0.1 subnet.
-Add at the end of the /etc/services file.
+And at the end of the /etc/services file.
   `sudo echo "tigerlog\t5252/udp" >> /etc/services`
 
 Edit the tigerlog.ini file to your liking.\
